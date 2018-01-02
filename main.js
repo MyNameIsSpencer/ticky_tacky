@@ -48,17 +48,20 @@ function winnerText() {
 }
 
 function checkDraw() {
-  if (a1.innerText != "" && a2.innerText != "" && a3.innerText != "" && b1.innerText != "" && b2.innerText != "" && b3.innerText != "" && c1.innerText != "" && c2.innerText != "" && c3.innerText != "") {
-    document.getElementById("messenger").innerText = 'DRRAAWW!!';
-    gameOver = true;
-  }
-  // // counter = 0;
-  // var cells = [a1,a2,a3,b1,b2,b3,c1,c2,c3];
+  // if (a1.innerText != "" && a2.innerText != "" && a3.innerText != "" && b1.innerText != "" && b2.innerText != "" && b3.innerText != "" && c1.innerText != "" && c2.innerText != "" && c3.innerText != "") {
+  //   document.getElementById("messenger").innerText = 'DRRAAWW!!';
+  //   gameOver = true;
+  // }
+  var cells = [a1,a2,a3,b1,b2,b3,c1,c2,c3];
+  var newCells = cells.filter(cell => cell.innerText != '');
+  if(cells.length === newCells.length) {
   // if(cells.forEach(function(cell) {
-  //   cell != ''
+  //   cell.innerText != ''
   // })) {
-  //     console.log('DRRRAAAAWWW!!!')
-  // };
+      gameOver = true;
+      console.log('DRRRAAAAWWW!!!');
+      document.getElementById("messenger").innerText = 'DRRAAWW!!';
+  };
 }
 
 
